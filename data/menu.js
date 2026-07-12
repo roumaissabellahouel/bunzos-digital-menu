@@ -36,11 +36,9 @@ export const restaurant = {
   instagramUrl: "https://instagram.com/bunzos.dz",
 
   // URL du menu déployé (utilisée par qr/index.html pour générer le QR code).
-  // À remplacer par l'URL réelle une fois le site publié sur Netlify/Vercel
-  // (ex: "https://bunzos.netlify.app"). La page /qr permet aussi de la
-  // modifier ponctuellement sans toucher au code, pour tester avant le
-  // déploiement final.
-  menuUrl: "https://bunzos.netlify.app",
+  // La page /qr permet aussi de la modifier ponctuellement sans toucher
+  // au code, pour tester une autre adresse.
+  menuUrl: "https://bunzos-digital-menu.vercel.app",
 
   // Numéro WhatsApp au format international, sans le "+" (format wa.me)
   // Donnée factice pour la démo — à remplacer par le vrai numéro du client.
