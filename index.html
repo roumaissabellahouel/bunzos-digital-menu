@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Bunzo's — Menu</title>
+  <meta name="description" content="Menu digital Bunzo's, street burgers à Oran. Commande directe par WhatsApp." />
+  <meta name="theme-color" content="#171210" />
+
+  <!-- Polices en local (pas de requête vers Google Fonts, plus rapide en 3G) -->
+  <link rel="preload" href="assets/fonts/Anton-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Liseré damier signature -->
+  <div class="checker-strip" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header">
+    <!-- Rempli par js/app.js à partir de data/menu.js (restaurant.name, tagline, hours) -->
+  </header>
+
+  <!-- ===================== NAVIGATION CATÉGORIES ===================== -->
+  <nav class="category-nav" id="category-nav" aria-label="Catégories du menu">
+    <!-- Pills injectées par js/app.js à partir de data/menu.js (categories) -->
+  </nav>
+
+  <!-- ===================== MENU ===================== -->
+  <main id="menu">
+    <!-- Sections + cartes produits injectées par js/app.js -->
+  </main>
+
+  <!-- ===================== BOUTON WHATSAPP FLOTTANT ===================== -->
+  <a
+    class="whatsapp-fab"
+    id="whatsapp-fab"
+    href="#"
+    target="_blank"
+    rel="noopener"
+    aria-label="Commander sur WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.35.65 4.55 1.79 6.44L4 29l7.73-1.75a11.9 11.9 0 0 0 4.28.79h.01c6.63 0 12-5.38 12-12.01C28.02 8.38 22.64 3 16.01 3Zm0 21.8h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-4.59 1.04 1.06-4.47-.24-.37a9.8 9.8 0 0 1-1.52-5.4c0-5.45 4.44-9.89 9.91-9.89 2.65 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 7c0 5.45-4.45 9.78-10.1 9.78Zm5.44-7.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.87 1.21 3.07c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35Z"
+      />
+    </svg>
+  </a>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" id="site-footer">
+    <!-- Rempli par js/app.js à partir de data/menu.js (adresse, maps, tel, instagram) -->
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

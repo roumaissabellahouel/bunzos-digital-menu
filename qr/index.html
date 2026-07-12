@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Bunzo's — Générateur de QR Code</title>
+  <meta name="description" content="Génère le QR code du menu Bunzo's, exportable en PNG haute résolution et en cadre imprimable A6." />
+  <meta name="theme-color" content="#171210" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preload" href="../assets/fonts/Anton-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Réutilise les tokens, le reset et les fonts du site principal -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="qr.css" />
+</head>
+<body class="qr-page">
+
+  <div class="checker-strip no-print" aria-hidden="true"></div>
+
+  <header class="qr-header no-print">
+    <p class="qr-header__logo" id="qr-header-logo"></p>
+    <p class="qr-header__label">Générateur de QR Code</p>
+  </header>
+
+  <main class="qr-main no-print">
+
+    <!-- ============== Réglages ============== -->
+    <section class="qr-panel">
+      <label class="qr-field">
+        <span class="qr-field__label">URL du menu</span>
+        <input
+          type="url"
+          id="menu-url"
+          class="qr-field__input"
+          placeholder="https://votre-menu.netlify.app"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </label>
+      <p class="qr-field__hint" id="url-hint">
+        Pré-rempli depuis <code>data/menu.js</code> (<code>restaurant.menuUrl</code>). Modifie le champ
+        pour tester une autre adresse (ex: <code>http://localhost:5500</code>) sans toucher au code.
+      </p>
+    </section>
+
+    <!-- ============== Aperçu QR + export PNG ============== -->
+    <section class="qr-panel qr-panel--center">
+      <div class="qr-preview" id="qr-preview">
+        <canvas id="qr-canvas" width="280" height="280"></canvas>
+      </div>
+      <p class="qr-preview__url" id="qr-preview-url"></p>
+
+      <div class="qr-actions">
+        <button class="qr-btn qr-btn--primary" id="download-png" type="button">
+          Télécharger le QR (PNG haute résolution)
+        </button>
+        <button class="qr-btn qr-btn--ghost" id="copy-url" type="button">
+          Copier le lien
+        </button>
+      </div>
+      <p class="qr-note">
+        PNG exporté en 2000×2000px, fond blanc, marge de sécurité incluse — prêt pour l'impression
+        d'autocollants.
+      </p>
+    </section>
+
+    <!-- ============== Cadre imprimable A6 ============== -->
+    <section class="qr-panel">
+      <h2 class="qr-panel__title">Cadre imprimable A6</h2>
+      <p class="qr-note">
+        À poser sur les tables. Format A6 (105 × 148 mm) — utilise l'aperçu ci-dessous, puis
+        "Imprimer" pour lancer l'impression à la bonne taille (sélectionne le format papier A6 ou
+        laisse "Ajuster à la page" dans la boîte de dialogue d'impression).
+      </p>
+
+      <div class="a6-frame-wrap">
+        <div class="a6-frame" id="a6-frame">
+          <div class="a6-frame__checker a6-frame__checker--top" aria-hidden="true"></div>
+
+          <div class="a6-frame__body">
+            <p class="a6-frame__cta">Scannez pour<br />voir le menu 🍔</p>
+            <div class="a6-frame__qr">
+              <canvas id="qr-canvas-print" width="200" height="200"></canvas>
+            </div>
+            <p class="a6-frame__name" id="a6-frame-name"></p>
+          </div>
+
+          <div class="a6-frame__checker a6-frame__checker--bottom" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="qr-actions">
+        <button class="qr-btn qr-btn--primary" id="print-a6" type="button">
+          Imprimer le cadre A6
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============== Cadre A6 isolé pour impression ============== -->
+  <div class="a6-print-only print-only" id="a6-print-only" aria-hidden="true"></div>
+
+  <script src="../js/vendor/qrcode.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

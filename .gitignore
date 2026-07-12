@@ -1,0 +1,10 @@
+# Brief de projet et outillage d'assistant de code (pas destinés au repo public)
+CLAUDE.md
+.claude/
+.impeccable/
+
+# Dossier de références de marque (moodboard brut, pas utilisé par le site)
+brand/
+
+# Système
+.DS_Store
